@@ -140,7 +140,7 @@ Can_land:
 
 ### *c)* 
 
-![ex_3_2c!](ex_3_2c.jpg "AnImage")
+![ex_3_2c!](ex_3_2c.svg "AnImage")
 
 
 ## ​Problema 3.3
