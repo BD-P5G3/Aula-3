@@ -73,56 +73,68 @@ Pesado:
 
 ```
 Relações:
-Airport(Aiport_code, City, State, Name)
+Airport(Airport_code, City, State, Name)
 
 Flight_leg(Leg_no, flight_number, Airport_code, scheduled_arr_time, scheduled_dep_time)
 
-Leg_instance(Date, No_of_available_seats, arr_time, dep_time, Flight_number)
+Leg_instance(Date, No_of_available_seats, arr_time, dep_time, airport_code, Leg_no, Flight_number, airplane_id)
 
-Seat(Seat_no, customer_name, costumer_phone)
+Seat(Seat_no, Leg_no, Date, customer_name, costumer_phone)
 
 Airplane_type(Type_name, Max_seats, Company)
 
-Airplane(Airplane_id, Total_no_of_seats)
+Airplane(Airplane_id, Total_no_of_seats, type_name)
 
 Flight(Number, Airline, Weekdays)
 
-Fare(Code, Amount, Restrictions)
+Fare(Code, Amount, Restrictions, flight_number)
+
+Can_land(Airport_code, Type_name)
 ```
 
 
 ### *b)* 
 
 ```
+Airport:
+- Chaves candidatas: Airport_code
+- Chave primária: Airport_code
+- Chaves estrangeiras:
+
 Flight_leg:
-- Chaves candidatas: Airport_code, Leg_no, flight_number
-- Chave primária: Airport_code, Leg_no, flight_number
+- Chaves candidatas: Leg_no, flight_number
+- Chaves primárias: Leg_no, flight_number
 - Chaves estrangeiras: Airport_code, flight_number
 
 Leg_instance:
-- Chaves candidatas: Airport_code, Leg_no, Date
-- Chave primária: Airport_code, Leg_no, Date
+- Chaves candidatas: Leg_no, Date
+- Chaves primárias: Leg_no, Date
 - Chaves estrangeiras: Leg_no, Airport_code, Airplane_id
 
 Seat:
-- Chaves candidatas: Airport_code, Leg_no, Date, Seat_no
-- Chave primária: Airport_code, Leg_no, Date, Seat_no
-- Chaves estrangeiras: Airport_code, Leg_no, Date
+- Chaves candidatas: Seat_no, Leg_no, Date
+- Chaves primárias: Seat_no, Leg_no, Date
+- Chaves estrangeiras: Leg_no, Date
 
 Airplane Type:
-- Chaves candidatas: Type_name, Company
+- Chaves candidatas: Type_name
 - Chave primária: Type_name
 - Chaves estrangeiras: ---
 
 Airplane:
-- Chaves candidatas: Type_name, Airplane id
-- Chave primária: Airplane id
+- Chaves candidatas: Airplane_id
+- Chave primária: Airplane_id
 - Chaves estrangeiras: Type_name
 
 Fare:
 - Chaves candidatas: flight_number, code
-- Chave primária: flight_number, code
+- Chaves primárias: flight_number, code
 - Chaves estrangeiras: flight_number
+
+Can_land:
+- Chaves candidatas: Airport_code, Type_name
+- Chaves primárias: Airport_code, Type_name
+- Chaves estrangeiras: Airport_code, Type_name
 ```
 
 
