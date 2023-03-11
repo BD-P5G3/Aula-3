@@ -152,7 +152,7 @@ Can_land:
 
 ### *b)* 2.2
 
-![ex_3_3_b!](ex_3_3b.jpg "AnImage")
+![ex_3_3_b!](ex_3_3b.svg "AnImage")
 
 ### *c)* 2.3
 
